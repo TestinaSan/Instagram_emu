@@ -28,26 +28,22 @@ class Activieties extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(backgroundColor: Colors.black, title: Text('Activities')),
+      appBar: AppBar(title: Text('Activities')),
       body: ListView(
         children: [
+          ListTile(title: Text('Today')),
           ListTileField('assets/Profile0.jpg', 'Nothing new to see',
               'See your previews activities'),
-          ListTile(title: Text('Today', style: TextStyle(color: Colors.white))),
+          Divider(height: 15, color: Colors.transparent),
           ListTileField('assets/Profile0.jpg', 'Nothing new to see',
               'See your previews activities'),
-          ListTile(
-              title: Text('Before', style: TextStyle(color: Colors.white))),
-          ListTileField('assets/Profile0.jpg', 'Nothing new to see',
-              'See your previews activities'),
-          Divider(height: 15),
-          ListTileField('assets/Profile0.jpg', 'Nothing new to see',
-              'See your previews activities'),
-          Divider(height: 15),
-          ListTileField('assets/Profile0.jpg', 'Nothing new to see',
-              'See your previews activities'),
-          Divider(height: 15),
+          ListTile(title: Text('Before')),
+          for (int i = 0; i < 10; i++)
+            Column(children: [
+              ListTileField('assets/Profile0.jpg', 'Nothing new to see',
+                  'See your previews activities'),
+              Divider(height: 15, color: Colors.transparent)
+            ])
         ],
       ),
     );

@@ -30,9 +30,7 @@ class DMPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
         title: Text('Account'),
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.videocam_outlined)),
@@ -46,20 +44,21 @@ class DMPage extends StatelessWidget {
             height: 40,
             child: TextField(
               decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  prefixIcon: Icon(Icons.search, color: Colors.grey),
-                  labelText: 'Search',
-                  labelStyle: TextStyle(color: Colors.grey),
-                  fillColor: Colors.grey[900],
-                  filled: true),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                prefixIcon: Icon(Icons.search, color: Colors.grey),
+                labelText: 'Search',
+                labelStyle: TextStyle(color: Colors.grey),
+              ),
             ),
           ),
-          ListTileField('assets/Profile0.jpg', 'Name', 'Last message'),
-          ListTileField('assets/Profile0.jpg', 'Name', 'Last message'),
-          ListTileField('assets/Profile0.jpg', 'Name', 'Last message'),
-          ListTileField('assets/Profile0.jpg', 'Name', 'Last message'),
+          for (int i = 0; i < 30; i++)
+            Column(
+              children: [
+                ListTileField('assets/Profile0.jpg', 'Name', 'Last message')
+              ],
+            )
         ],
       ),
     );
